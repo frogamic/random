@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const fizzbuzz = i =>
   ({
     ['true,true']: 'FizzBuzz',
