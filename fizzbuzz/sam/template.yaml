@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: fizzbuzz-as-a-service
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  FizzBuzzFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/
+      Handler: app.lambdaHandler
+      Runtime: nodejs12.x
+      Events:
+        FizzBuzzGet:
+          Type: Api
+          Properties:
+            Path: /fizzbuzz-as-a-service/{value}
+            Method: get
+        FizzBuzzPost:
+          Type: Api
+          Properties:
+            Path: /fizzbuzz-as-a-service/{value}
+            Method: post
+
+Outputs:
+  FizzBuzzAsAService:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+  FizzBuzzFunction:
+    Description: "Fizz Buzz Function ARN"
+    Value: !GetAtt FizzBuzzFunction.Arn

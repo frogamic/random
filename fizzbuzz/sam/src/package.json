@@ -1,0 +1,11 @@
+{
+  "name": "fizzbuzz-as-a-service",
+  "version": "1.0.0",
+  "description": "Fizz Buzz as a Service",
+  "main": "app.js",
+  "repository": "https://github.com/frogamic/random",
+  "author": "Dominic Shelton",
+  "license": "MIT",
+  "dependencies": { },
+  "scripts": { }
+}

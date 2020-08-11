@@ -1,0 +1,10 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "fizzbuzz-as-a-service"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1bc0r6y408qxa"
+s3_prefix = "fizzbuzz-as-a-service"
+region = "ap-southeast-2"
+profile = "personal"
+capabilities = "CAPABILITY_IAM"
